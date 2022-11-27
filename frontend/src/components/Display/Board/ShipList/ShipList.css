@@ -1,0 +1,90 @@
+.ship-list {
+  background-color: rgb(128, 128, 128, 0);
+  color: #ffffff;
+  position: relative;
+  text-align: center;
+  min-width: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0em 1.4em;
+}
+
+.ship-list > div > div {
+  margin: 1.5em 0;
+  display: flex;
+  /* justify-content:space-evenly; */
+}
+
+.display .ship-list:first-child {
+  left: 1.5em;
+  padding: 1em 1em 1em 1em;
+  border-radius: 1em 1em 1em 1em;
+}
+
+.display .ship-list:nth-child(2) {
+  right: 1.5em;
+  padding: 1em 1em 1em 1em;
+  border-radius: 1em 1em 1em 1em;
+}
+
+.ship-list button {
+  font-family: "Press Start 2P";
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  background-color: #e8175d;
+}
+
+.ship-list button.cancel {
+  font-family: "Press Start 2P";
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: #e8175d;
+}
+
+.ship-list button:first-child {
+  margin-right: 0.4em;
+}
+
+.ship-name {
+  font-size: 0.8em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.6em;
+  border: 0.1em solid #fff;
+}
+
+.label:first-child {
+  background-color: #33a9ac;
+}
+
+.ship-name:nth-child(2) .label {
+  background-color: #da2864;
+}
+
+.ship-name:nth-child(3) .label {
+  background-color: #f7ad19;
+}
+
+.ship-name:nth-child(4) .label {
+  background-color: #982062;
+}
+
+.ship-name:nth-child(5) .label {
+  background-color: #e76f51;
+}

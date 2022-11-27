@@ -1,0 +1,51 @@
+.game-status-container {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+}
+
+.game-status-wrapper {
+  border: 1px solid white;
+  border-radius: 0.5em;
+  background: rgba(54, 54, 54, 0.2);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: auto;
+  color: #fff;
+}
+
+.game-status-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.emoji-span {
+  font-size: 24px;
+  padding: 2px;
+  opacity: 0.2;
+  transition: all 0.2s ease-in-out;
+}
+
+.emoji-span.active {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.main-button.new-game {
+  font-size: 16px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-button.new-game:active {
+  box-shadow: 0 5px rgb(255, 255, 255);
+  transform: translateY(4px);
+}

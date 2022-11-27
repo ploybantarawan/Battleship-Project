@@ -1,0 +1,18 @@
+h1,
+h4,
+h3 {
+  font-family: "Press Start 2P";
+  text-transform: uppercase;
+  color: white;
+}
+
+.display {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.display > div {
+  max-width: 50%;
+}

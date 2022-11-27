@@ -1,0 +1,88 @@
+.join-page-container {
+  text-align: center;
+  margin: 6em;
+}
+
+.page-content-tab-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-status-label {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+}
+
+.label-content {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  margin-top: 100px;
+}
+
+.player-name-input {
+  font-family: "Press Start 2P";
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px;
+  color: #E8175D;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.player-name-input:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.player-name-input:focus {
+  outline: none;
+  box-shadow: rgba(52, 0, 17, 0.5) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+::placeholder {
+  color: #e8175d;
+}
+
+.continue-button {
+  font-family: "Press Start 2P";
+  padding: 15px 25px;
+  font-size: 28px;
+  color: #8a8a8a;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.continue-button:hover {
+  padding-right: 25px;
+  background-color: transparent;
+  color: #e8175d;
+}
+
+.main-button {
+  font-family: "Press Start 2P";
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  background-color: #e8175d;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 36px;
+  margin-top: 70px;
+}
+
+.main-button:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 0.8;
+}
+
+.main-button:active {
+  box-shadow: none;
+  opacity: 1;
+}
