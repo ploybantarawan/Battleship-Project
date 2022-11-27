@@ -4,7 +4,8 @@ import { Server } from "socket.io";
 
 const io = new Server({
   cors: {
-    origin: ["http://localhost:4000"],
+    origin: ["http://172.27.151.178:4000"],
+    // change to your own IP Adress
   },
 });
 
@@ -12,14 +13,20 @@ const clients = {};
 const clientNames = {};
 const scores = {};
 
-var numOnlineClients = 0
+var numOnlineClients = 0;
 
-function updateNumOnlineClients(count){
-  numOnlineClients += count
+function updateNumOnlineClients(count) {
+  numOnlineClients += count;
 }
 
 io.on("connection", (socket) => {
-  const { sendShips, sendShot, sendOpponentTimeOut, randomFirstPlayer, winGame } = game(clients, scores, socket, io);
+  const {
+    sendShips,
+    sendShot,
+    sendOpponentTimeOut,
+    randomFirstPlayer,
+    winGame,
+  } = game(clients, scores, socket, io);
   const { addClient, removeClient, newSession, terminateSession } = client(
     clients,
     clientNames,
@@ -27,7 +34,7 @@ io.on("connection", (socket) => {
     socket,
     io
   );
-  
+
   addClient();
 
   updateNumOnlineClients(1);
@@ -40,30 +47,28 @@ io.on("connection", (socket) => {
 
   socket.on("end", terminateSession);
 
-  socket.on('opponentTimeOut', sendOpponentTimeOut);
+  socket.on("opponentTimeOut", sendOpponentTimeOut);
 
-  socket.on('randomFirstPlayer', randomFirstPlayer)
+  socket.on("randomFirstPlayer", randomFirstPlayer);
 
-  socket.on('winGame', winGame)
+  socket.on("winGame", winGame);
 
-  socket.on("disconnect", function(){
+  socket.on("disconnect", function () {
     removeClient();
     updateNumOnlineClients(-1);
   });
 
-  socket.on('resetGame', function(){
-    Object.values(clients).forEach(playerSocketId => {
-      if ( playerSocketId && playerSocketId != socket.id ){
-        io.sockets.sockets.get(playerSocketId).emit('resetGame')
+  socket.on("resetGame", function () {
+    Object.values(clients).forEach((playerSocketId) => {
+      if (playerSocketId && playerSocketId != socket.id) {
+        io.sockets.sockets.get(playerSocketId).emit("resetGame");
       }
-    })
-  })
+    });
+  });
 
-  socket.on('numOnlineClients', function(){
-    socket.emit('numOnlineClients', numOnlineClients)
-  })
-
+  socket.on("numOnlineClients", function () {
+    socket.emit("numOnlineClients", numOnlineClients);
+  });
 });
-
 
 io.listen(4000);
